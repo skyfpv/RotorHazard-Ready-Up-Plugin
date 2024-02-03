@@ -395,9 +395,9 @@ class RUManager():
         self.broadcastLEDInfo()
         
     def handleRaceWin(self, data):
-        logging.info("Event: handleRaceWin - "+str(data))
+        logging.debug("Event: handleRaceWin - "+str(data))
         winnerSeatColor = self.getPilotColor(data["win_status"]["data"]["node"])
-        logging.info("Event: winner color - "+str(winnerSeatColor))
+        logging.debug("Event: winner color - "+str(winnerSeatColor))
         self.updateAllPilotButtonLEDs(ANIMATION_PILOT_WIN, winnerSeatColor)
         self.updateRaceDirectorButtonLEDs(ANIMATION_PILOT_WIN, winnerSeatColor)
         self.broadcastLEDInfo()
