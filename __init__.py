@@ -175,6 +175,7 @@ class RUManager():
         data = {"major":VERSION_MAJOR, "minor":VERSION_MINOR}
         logging.debug("-> "+str(data))
         self.rhapi.ui.socket_broadcast("ready_up_version", data)
+        self.broadcastLEDInfo()
 
     def handleReadyToggle(self, data, forceValue=None):
         #{
